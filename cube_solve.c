@@ -313,7 +313,6 @@ void main(){
     printf("now^check1");
     secound();
     printf("now^check2");
-    */
     for (int i = 0; i < 6; i++)
     {
         for (int j = 0; j < 4; j++)
@@ -322,6 +321,7 @@ void main(){
         }
         printf("\n");
     }
+    */
     printf("%d",how);
     
 }
