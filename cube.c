@@ -138,7 +138,7 @@ int turn_Tz_minus(){
 }
 void main(){
     turn_Tx_Plus();
-    turn_Ty_Plus();
+    turn_Ty_minus();
     for (int i = 0; i < 6; i++)
     {
         for (int j = 0; j < 4; j++)
@@ -147,5 +147,4 @@ void main(){
         }
         printf("\n");
     }
-    
 }
