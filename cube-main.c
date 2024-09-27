@@ -10,12 +10,12 @@ int cube[6][4]={
 };
 */
 int cube[6][4]={
-    {1,3,4,3},
-    {2,1,2,1},
-    {3,2,3,6},
-    {6,6,4,4},
-    {4,5,1,5},
-    {2,5,6,5}
+    {1,1,4,2},
+    {3,3,2,1},
+    {6,1,4,3},
+    {5,4,6,4},
+    {5,2,5,5},
+    {3,2,6,6},
 };
 
 int cube_save[6][4]={
@@ -328,128 +328,489 @@ int turn_Tz_minus2(){
     cube_save2[1][1]=cube_save3[2][1];
 }
 
+int turn_Tx_Plus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][2]=cube_save4[3][0];
+    cube_save3[0][3]=cube_save4[3][2];
+    cube_save3[1][3]=cube_save4[0][2];
+    cube_save3[1][1]=cube_save4[0][3];
+    cube_save3[5][1]=cube_save4[1][3];
+    cube_save3[5][0]=cube_save4[1][1];
+    cube_save3[3][0]=cube_save4[5][1];
+    cube_save3[3][2]=cube_save4[5][0];
+    cube_save3[2][0]=cube_save4[2][1];
+    cube_save3[2][1]=cube_save4[2][3];
+    cube_save3[2][2]=cube_save4[2][0];
+    cube_save3[2][3]=cube_save4[2][2];
+}
+int turn_Tx_minus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][2]=cube_save4[1][3];
+    cube_save3[0][3]=cube_save4[1][1];
+    cube_save3[1][3]=cube_save4[5][1];
+    cube_save3[1][1]=cube_save4[5][0];
+    cube_save3[5][1]=cube_save4[3][0];
+    cube_save3[5][0]=cube_save4[3][2];
+    cube_save3[3][0]=cube_save4[0][2];
+    cube_save3[3][2]=cube_save4[0][3];
+    cube_save3[2][0]=cube_save4[2][2];
+    cube_save3[2][1]=cube_save4[2][0];
+    cube_save3[2][2]=cube_save4[2][3];
+    cube_save3[2][3]=cube_save4[2][1];
+}
+int turn_Ty_Plus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][1]=cube_save4[4][2];
+    cube_save3[0][3]=cube_save4[4][0];
+    cube_save3[2][1]=cube_save4[0][1];
+    cube_save3[2][3]=cube_save4[0][3];
+    cube_save3[5][1]=cube_save4[2][1];
+    cube_save3[5][3]=cube_save4[2][3];
+    cube_save3[4][2]=cube_save4[5][1];
+    cube_save3[4][0]=cube_save4[5][3];
+    cube_save3[3][0]=cube_save4[3][1];
+    cube_save3[3][1]=cube_save4[3][3];
+    cube_save3[3][2]=cube_save4[3][0];
+    cube_save3[3][3]=cube_save4[3][2];
+}
+int turn_Ty_minus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][1]=cube_save4[2][1];
+    cube_save3[0][3]=cube_save4[2][3];
+    cube_save3[2][1]=cube_save4[5][1];
+    cube_save3[2][3]=cube_save4[5][3];
+    cube_save3[5][1]=cube_save4[4][2];
+    cube_save3[5][3]=cube_save4[4][0];
+    cube_save3[4][2]=cube_save4[0][1];
+    cube_save3[4][0]=cube_save4[0][3];
+    cube_save3[3][0]=cube_save4[3][2];
+    cube_save3[3][1]=cube_save4[3][0];
+    cube_save3[3][2]=cube_save4[3][3];
+    cube_save3[3][3]=cube_save4[3][1];
+}
+int turn_Tz_Plus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][0]=cube_save4[0][1];
+    cube_save3[0][1]=cube_save4[0][3];
+    cube_save3[0][2]=cube_save4[0][0];
+    cube_save3[0][3]=cube_save4[0][2];
+    cube_save3[2][0]=cube_save4[1][0];
+    cube_save3[2][1]=cube_save4[1][1];
+    cube_save3[3][0]=cube_save4[2][0];
+    cube_save3[3][1]=cube_save4[2][1];
+    cube_save3[4][0]=cube_save4[3][0];
+    cube_save3[4][1]=cube_save4[3][1];
+    cube_save3[1][0]=cube_save4[4][0];
+    cube_save3[1][1]=cube_save4[4][1];
+}
+int turn_Tz_minus3(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save3[i][j] = cube_save4[i][j];
+        }
+    }
+    cube_save3[0][0]=cube_save4[0][2];
+    cube_save3[0][1]=cube_save4[0][0];
+    cube_save3[0][2]=cube_save4[0][3];
+    cube_save3[0][3]=cube_save4[0][1];
+    cube_save3[2][0]=cube_save4[3][0];
+    cube_save3[2][1]=cube_save4[3][1];
+    cube_save3[3][0]=cube_save4[4][0];
+    cube_save3[3][1]=cube_save4[4][1];
+    cube_save3[4][0]=cube_save4[1][0];
+    cube_save3[4][1]=cube_save4[1][1];
+    cube_save3[1][0]=cube_save4[2][0];
+    cube_save3[1][1]=cube_save4[2][1];
+}
 
-int turn_Tx_Plus(){
+int turn_Tx_Plus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][2]=cube_save[3][0];
-    cube_save[0][3]=cube_save[3][2];
-    cube_save[1][3]=cube_save[0][2];
-    cube_save[1][1]=cube_save[0][3];
-    cube_save[5][1]=cube_save[1][3];
-    cube_save[5][0]=cube_save[1][1];
-    cube_save[3][0]=cube_save[5][1];
-    cube_save[3][2]=cube_save[5][0];
-    cube_save[2][0]=cube_save[2][1];
-    cube_save[2][1]=cube_save[2][3];
-    cube_save[2][2]=cube_save[2][0];
-    cube_save[2][3]=cube_save[2][2];
+    cube_save4[0][2]=cube_save5[3][0];
+    cube_save4[0][3]=cube_save5[3][2];
+    cube_save4[1][3]=cube_save5[0][2];
+    cube_save4[1][1]=cube_save5[0][3];
+    cube_save4[5][1]=cube_save5[1][3];
+    cube_save4[5][0]=cube_save5[1][1];
+    cube_save4[3][0]=cube_save5[5][1];
+    cube_save4[3][2]=cube_save5[5][0];
+    cube_save4[2][0]=cube_save5[2][1];
+    cube_save4[2][1]=cube_save5[2][3];
+    cube_save4[2][2]=cube_save5[2][0];
+    cube_save4[2][3]=cube_save5[2][2];
 }
-int turn_Tx_minus(){
+int turn_Tx_minus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][2]=cube_save[1][3];
-    cube_save[0][3]=cube_save[1][1];
-    cube_save[1][3]=cube_save[5][1];
-    cube_save[1][1]=cube_save[5][0];
-    cube_save[5][1]=cube_save[3][0];
-    cube_save[5][0]=cube_save[3][2];
-    cube_save[3][0]=cube_save[0][2];
-    cube_save[3][2]=cube_save[0][3];
-    cube_save[2][0]=cube_save[2][2];
-    cube_save[2][1]=cube_save[2][0];
-    cube_save[2][2]=cube_save[2][3];
-    cube_save[2][3]=cube_save[2][1];
+    cube_save4[0][2]=cube_save5[1][3];
+    cube_save4[0][3]=cube_save5[1][1];
+    cube_save4[1][3]=cube_save5[5][1];
+    cube_save4[1][1]=cube_save5[5][0];
+    cube_save4[5][1]=cube_save5[3][0];
+    cube_save4[5][0]=cube_save5[3][2];
+    cube_save4[3][0]=cube_save5[0][2];
+    cube_save4[3][2]=cube_save5[0][3];
+    cube_save4[2][0]=cube_save5[2][2];
+    cube_save4[2][1]=cube_save5[2][0];
+    cube_save4[2][2]=cube_save5[2][3];
+    cube_save4[2][3]=cube_save5[2][1];
 }
-int turn_Ty_Plus(){
+int turn_Ty_Plus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][1]=cube_save[4][2];
-    cube_save[0][3]=cube_save[4][0];
-    cube_save[2][1]=cube_save[0][1];
-    cube_save[2][3]=cube_save[0][3];
-    cube_save[5][1]=cube_save[2][1];
-    cube_save[5][3]=cube_save[2][3];
-    cube_save[4][2]=cube_save[5][1];
-    cube_save[4][0]=cube_save[5][3];
-    cube_save[3][0]=cube_save[3][1];
-    cube_save[3][1]=cube_save[3][3];
-    cube_save[3][2]=cube_save[3][0];
-    cube_save[3][3]=cube_save[3][2];
+    cube_save4[0][1]=cube_save5[4][2];
+    cube_save4[0][3]=cube_save5[4][0];
+    cube_save4[2][1]=cube_save5[0][1];
+    cube_save4[2][3]=cube_save5[0][3];
+    cube_save4[5][1]=cube_save5[2][1];
+    cube_save4[5][3]=cube_save5[2][3];
+    cube_save4[4][2]=cube_save5[5][1];
+    cube_save4[4][0]=cube_save5[5][3];
+    cube_save4[3][0]=cube_save5[3][1];
+    cube_save4[3][1]=cube_save5[3][3];
+    cube_save4[3][2]=cube_save5[3][0];
+    cube_save4[3][3]=cube_save5[3][2];
 }
-int turn_Ty_minus(){
+int turn_Ty_minus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][1]=cube_save[2][1];
-    cube_save[0][3]=cube_save[2][3];
-    cube_save[2][1]=cube_save[5][1];
-    cube_save[2][3]=cube_save[5][3];
-    cube_save[5][1]=cube_save[4][2];
-    cube_save[5][3]=cube_save[4][0];
-    cube_save[4][2]=cube_save[0][1];
-    cube_save[4][0]=cube_save[0][3];
-    cube_save[3][0]=cube_save[3][2];
-    cube_save[3][1]=cube_save[3][0];
-    cube_save[3][2]=cube_save[3][3];
-    cube_save[3][3]=cube_save[3][1];
+    cube_save4[0][1]=cube_save5[2][1];
+    cube_save4[0][3]=cube_save5[2][3];
+    cube_save4[2][1]=cube_save5[5][1];
+    cube_save4[2][3]=cube_save5[5][3];
+    cube_save4[5][1]=cube_save5[4][2];
+    cube_save4[5][3]=cube_save5[4][0];
+    cube_save4[4][2]=cube_save5[0][1];
+    cube_save4[4][0]=cube_save5[0][3];
+    cube_save4[3][0]=cube_save5[3][2];
+    cube_save4[3][1]=cube_save5[3][0];
+    cube_save4[3][2]=cube_save5[3][3];
+    cube_save4[3][3]=cube_save5[3][1];
 }
-int turn_Tz_Plus(){
+int turn_Tz_Plus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][0]=cube_save[0][1];
-    cube_save[0][1]=cube_save[0][3];
-    cube_save[0][2]=cube_save[0][0];
-    cube_save[0][3]=cube_save[0][2];
-    cube_save[2][0]=cube_save[1][0];
-    cube_save[2][1]=cube_save[1][1];
-    cube_save[3][0]=cube_save[2][0];
-    cube_save[3][1]=cube_save[2][1];
-    cube_save[4][0]=cube_save[3][0];
-    cube_save[4][1]=cube_save[3][1];
-    cube_save[1][0]=cube_save[4][0];
-    cube_save[1][1]=cube_save[4][1];
+    cube_save4[0][0]=cube_save5[0][1];
+    cube_save4[0][1]=cube_save5[0][3];
+    cube_save4[0][2]=cube_save5[0][0];
+    cube_save4[0][3]=cube_save5[0][2];
+    cube_save4[2][0]=cube_save5[1][0];
+    cube_save4[2][1]=cube_save5[1][1];
+    cube_save4[3][0]=cube_save5[2][0];
+    cube_save4[3][1]=cube_save5[2][1];
+    cube_save4[4][0]=cube_save5[3][0];
+    cube_save4[4][1]=cube_save5[3][1];
+    cube_save4[1][0]=cube_save5[4][0];
+    cube_save4[1][1]=cube_save5[4][1];
 }
-int turn_Tz_minus(){
+int turn_Tz_minus4(){
     for(int i=0;i<6;i++){
         for (int j = 0; j < 4; j++)
         {
-            cube_save[i][j] = cube_save[i][j];
+            cube_save4[i][j] = cube_save5[i][j];
         }
     }
-    cube_save[0][0]=cube_save[0][2];
-    cube_save[0][1]=cube_save[0][0];
-    cube_save[0][2]=cube_save[0][3];
-    cube_save[0][3]=cube_save[0][1];
-    cube_save[2][0]=cube_save[3][0];
-    cube_save[2][1]=cube_save[3][1];
-    cube_save[3][0]=cube_save[4][0];
-    cube_save[3][1]=cube_save[4][1];
-    cube_save[4][0]=cube_save[1][0];
-    cube_save[4][1]=cube_save[1][1];
-    cube_save[1][0]=cube_save[2][0];
-    cube_save[1][1]=cube_save[2][1];
+    cube_save4[0][0]=cube_save5[0][2];
+    cube_save4[0][1]=cube_save5[0][0];
+    cube_save4[0][2]=cube_save5[0][3];
+    cube_save4[0][3]=cube_save5[0][1];
+    cube_save4[2][0]=cube_save5[3][0];
+    cube_save4[2][1]=cube_save5[3][1];
+    cube_save4[3][0]=cube_save5[4][0];
+    cube_save4[3][1]=cube_save5[4][1];
+    cube_save4[4][0]=cube_save5[1][0];
+    cube_save4[4][1]=cube_save5[1][1];
+    cube_save4[1][0]=cube_save5[2][0];
+    cube_save4[1][1]=cube_save5[2][1];
 }
 
+int turn_Tx_Plus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][2]=cube_save6[3][0];
+    cube_save5[0][3]=cube_save6[3][2];
+    cube_save5[1][3]=cube_save6[0][2];
+    cube_save5[1][1]=cube_save6[0][3];
+    cube_save5[5][1]=cube_save6[1][3];
+    cube_save5[5][0]=cube_save6[1][1];
+    cube_save5[3][0]=cube_save6[5][1];
+    cube_save5[3][2]=cube_save6[5][0];
+    cube_save5[2][0]=cube_save6[2][1];
+    cube_save5[2][1]=cube_save6[2][3];
+    cube_save5[2][2]=cube_save6[2][0];
+    cube_save5[2][3]=cube_save6[2][2];
+}
+int turn_Tx_minus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][2]=cube_save6[1][3];
+    cube_save5[0][3]=cube_save6[1][1];
+    cube_save5[1][3]=cube_save6[5][1];
+    cube_save5[1][1]=cube_save6[5][0];
+    cube_save5[5][1]=cube_save6[3][0];
+    cube_save5[5][0]=cube_save6[3][2];
+    cube_save5[3][0]=cube_save6[0][2];
+    cube_save5[3][2]=cube_save6[0][3];
+    cube_save5[2][0]=cube_save6[2][2];
+    cube_save5[2][1]=cube_save6[2][0];
+    cube_save5[2][2]=cube_save6[2][3];
+    cube_save5[2][3]=cube_save6[2][1];
+}
+int turn_Ty_Plus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][1]=cube_save6[4][2];
+    cube_save5[0][3]=cube_save6[4][0];
+    cube_save5[2][1]=cube_save6[0][1];
+    cube_save5[2][3]=cube_save6[0][3];
+    cube_save5[5][1]=cube_save6[2][1];
+    cube_save5[5][3]=cube_save6[2][3];
+    cube_save5[4][2]=cube_save6[5][1];
+    cube_save5[4][0]=cube_save6[5][3];
+    cube_save5[3][0]=cube_save6[3][1];
+    cube_save5[3][1]=cube_save6[3][3];
+    cube_save5[3][2]=cube_save6[3][0];
+    cube_save5[3][3]=cube_save6[3][2];
+}
+int turn_Ty_minus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][1]=cube_save6[2][1];
+    cube_save5[0][3]=cube_save6[2][3];
+    cube_save5[2][1]=cube_save6[5][1];
+    cube_save5[2][3]=cube_save6[5][3];
+    cube_save5[5][1]=cube_save6[4][2];
+    cube_save5[5][3]=cube_save6[4][0];
+    cube_save5[4][2]=cube_save6[0][1];
+    cube_save5[4][0]=cube_save6[0][3];
+    cube_save5[3][0]=cube_save6[3][2];
+    cube_save5[3][1]=cube_save6[3][0];
+    cube_save5[3][2]=cube_save6[3][3];
+    cube_save5[3][3]=cube_save6[3][1];
+}
+int turn_Tz_Plus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][0]=cube_save6[0][1];
+    cube_save5[0][1]=cube_save6[0][3];
+    cube_save5[0][2]=cube_save6[0][0];
+    cube_save5[0][3]=cube_save6[0][2];
+    cube_save5[2][0]=cube_save6[1][0];
+    cube_save5[2][1]=cube_save6[1][1];
+    cube_save5[3][0]=cube_save6[2][0];
+    cube_save5[3][1]=cube_save6[2][1];
+    cube_save5[4][0]=cube_save6[3][0];
+    cube_save5[4][1]=cube_save6[3][1];
+    cube_save5[1][0]=cube_save6[4][0];
+    cube_save5[1][1]=cube_save6[4][1];
+}
+int turn_Tz_minus5(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save5[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save5[0][0]=cube_save6[0][2];
+    cube_save5[0][1]=cube_save6[0][0];
+    cube_save5[0][2]=cube_save6[0][3];
+    cube_save5[0][3]=cube_save6[0][1];
+    cube_save5[2][0]=cube_save6[3][0];
+    cube_save5[2][1]=cube_save6[3][1];
+    cube_save5[3][0]=cube_save6[4][0];
+    cube_save5[3][1]=cube_save6[4][1];
+    cube_save5[4][0]=cube_save6[1][0];
+    cube_save5[4][1]=cube_save6[1][1];
+    cube_save5[1][0]=cube_save6[2][0];
+    cube_save5[1][1]=cube_save6[2][1];
+}
+
+int turn_Tx_Plus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube[i][j];
+        }
+    }
+    cube_save6[0][2]=cube[3][0];
+    cube_save6[0][3]=cube[3][2];
+    cube_save6[1][3]=cube[0][2];
+    cube_save6[1][1]=cube[0][3];
+    cube_save6[5][1]=cube[1][3];
+    cube_save6[5][0]=cube[1][1];
+    cube_save6[3][0]=cube[5][1];
+    cube_save6[3][2]=cube[5][0];
+    cube_save6[2][0]=cube[2][1];
+    cube_save6[2][1]=cube[2][3];
+    cube_save6[2][2]=cube[2][0];
+    cube_save6[2][3]=cube[2][2];
+}
+int turn_Tx_minus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube[i][j];
+        }
+    }
+    cube_save6[0][2]=cube[1][3];
+    cube_save6[0][3]=cube[1][1];
+    cube_save6[1][3]=cube[5][1];
+    cube_save6[1][1]=cube[5][0];
+    cube_save6[5][1]=cube[3][0];
+    cube_save6[5][0]=cube[3][2];
+    cube_save6[3][0]=cube[0][2];
+    cube_save6[3][2]=cube[0][3];
+    cube_save6[2][0]=cube[2][2];
+    cube_save6[2][1]=cube[2][0];
+    cube_save6[2][2]=cube[2][3];
+    cube_save6[2][3]=cube[2][1];
+}
+int turn_Ty_Plus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube[i][j];
+        }
+    }
+    cube_save6[0][1]=cube[4][2];
+    cube_save6[0][3]=cube[4][0];
+    cube_save6[2][1]=cube[0][1];
+    cube_save6[2][3]=cube[0][3];
+    cube_save6[5][1]=cube[2][1];
+    cube_save6[5][3]=cube[2][3];
+    cube_save6[4][2]=cube[5][1];
+    cube_save6[4][0]=cube[5][3];
+    cube_save6[3][0]=cube[3][1];
+    cube_save6[3][1]=cube[3][3];
+    cube_save6[3][2]=cube[3][0];
+    cube_save6[3][3]=cube[3][2];
+}
+int turn_Ty_minus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube_save6[i][j];
+        }
+    }
+    cube_save6[0][1]=cube[2][1];
+    cube_save6[0][3]=cube[2][3];
+    cube_save6[2][1]=cube[5][1];
+    cube_save6[2][3]=cube[5][3];
+    cube_save6[5][1]=cube[4][2];
+    cube_save6[5][3]=cube[4][0];
+    cube_save6[4][2]=cube[0][1];
+    cube_save6[4][0]=cube[0][3];
+    cube_save6[3][0]=cube[3][2];
+    cube_save6[3][1]=cube[3][0];
+    cube_save6[3][2]=cube[3][3];
+    cube_save6[3][3]=cube[3][1];
+}
+int turn_Tz_Plus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube[i][j];
+        }
+    }
+    cube_save6[0][0]=cube[0][1];
+    cube_save6[0][1]=cube[0][3];
+    cube_save6[0][2]=cube[0][0];
+    cube_save6[0][3]=cube[0][2];
+    cube_save6[2][0]=cube[1][0];
+    cube_save6[2][1]=cube[1][1];
+    cube_save6[3][0]=cube[2][0];
+    cube_save6[3][1]=cube[2][1];
+    cube_save6[4][0]=cube[3][0];
+    cube_save6[4][1]=cube[3][1];
+    cube_save6[1][0]=cube[4][0];
+    cube_save6[1][1]=cube[4][1];
+}
+int turn_Tz_minus6(){
+    for(int i=0;i<6;i++){
+        for (int j = 0; j < 4; j++)
+        {
+            cube_save6[i][j] = cube[i][j];
+        }
+    }
+    cube_save6[0][0]=cube[0][2];
+    cube_save6[0][1]=cube[0][0];
+    cube_save6[0][2]=cube[0][3];
+    cube_save6[0][3]=cube[0][1];
+    cube_save6[2][0]=cube[3][0];
+    cube_save6[2][1]=cube[3][1];
+    cube_save6[3][0]=cube[4][0];
+    cube_save6[3][1]=cube[4][1];
+    cube_save6[4][0]=cube[1][0];
+    cube_save6[4][1]=cube[1][1];
+    cube_save6[1][0]=cube[2][0];
+    cube_save6[1][1]=cube[2][1];
+}
 
 
 
@@ -463,6 +824,27 @@ void main(){
                 }
             }
         }
+        else if (o==1){
+            if(depth<6){
+                depth=6;
+            }
+            turn_Tx_Plus6();
+        }
+        else if (o==2){
+            turn_Tx_minus6();
+        }
+        else if (o==3){
+            turn_Ty_Plus6();
+        }
+        else if (o==4){
+            turn_Ty_minus6();
+        }
+        else if (o==5){
+            turn_Tz_Plus6();
+        }
+        else if (o==6){
+            turn_Tz_minus6();
+        }
         for(int p=0;p<7;p++){
             if(p==0){
                 for(int i=0;i<6;i++){
@@ -470,6 +852,27 @@ void main(){
                         cube_save5[i][j]=cube_save6[i][j];
                     }
                 }
+            }
+            else if (p==1){
+                if(depth<5){
+                    depth=5;
+                }
+                turn_Tx_Plus5();
+            }
+            else if (p==2){
+                turn_Tx_minus5();
+            }
+            else if (p==3){
+                turn_Ty_Plus5();
+            }
+            else if (p==4){
+                turn_Ty_minus5();
+            }
+            else if (p==5){
+                turn_Tz_Plus5();
+            }
+            else if (p==6){
+                turn_Tz_minus5();
             }
             for(int k=0;k<7;k++){
                 if(k==0){
@@ -479,6 +882,27 @@ void main(){
                         }
                     }
                 }
+                else if (k==1){
+                    if(depth<4){
+                        depth=4;
+                    }
+                    turn_Tx_Plus4();
+                }
+                else if (k==2){
+                    turn_Tx_minus4();
+                }
+                else if (k==3){
+                    turn_Ty_Plus4();
+                }
+                else if (k==4){
+                    turn_Ty_minus4();
+                }
+                else if (k==5){
+                    turn_Tz_Plus4();
+                }
+                else if (k==6){
+                    turn_Tz_minus4();
+                }
                 for(int l=0;l<7;l++){
                     if(l==0){
                         for(int i=0;i<6;i++){
@@ -486,6 +910,26 @@ void main(){
                                 cube_save3[i][j]=cube_save4[i][j];
                             }
                         }
+                    }else if (l==1){
+                        if(depth<3){
+                            depth=3;
+                        }
+                        turn_Tx_Plus3();
+                    }
+                    else if (l==2){
+                        turn_Tx_minus3();
+                    }
+                    else if (l==3){
+                        turn_Ty_Plus3();
+                    }
+                    else if (l==4){
+                        turn_Ty_minus3();
+                    }
+                    else if (l==5){
+                        turn_Tz_Plus3();
+                    }
+                    else if (l==6){
+                        turn_Tz_minus3();
                     }
                     for(int m=0;m<7;m++){
                         if(m==0){
