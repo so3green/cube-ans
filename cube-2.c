@@ -83,14 +83,18 @@ int turn_Ty_minus(){
             cube_save[i][j] = cube[i][j];
         }
     }
-    cube[1][1]=cube_save[2][1];
-    cube[1][2]=cube_save[3][2];
-    cube[2][1]=cube_save[3][1];
-    cube[2][2]=cube_save[3][2];
-    cube[3][1]=cube_save[4][1];
-    cube[3][2]=cube_save[4][2];
-    cube[4][1]=cube_save[1][1];
-    cube[4][2]=cube_save[1][2];
+    cube[0][1]=cube_save[4][1];
+    cube[0][3]=cube_save[4][3];
+    cube[5][1]=cube_save[0][1];
+    cube[5][3]=cube_save[0][3];
+    cube[3][0]=cube_save[3][2];
+    cube[3][1]=cube_save[3][0];
+    cube[3][2]=cube_save[3][3];
+    cube[3][3]=cube_save[3][1];
+    cube[4][1]=cube_save[2][2];
+    cube[4][3]=cube_save[2][0];
+    cube[2][0]=cube_save[5][3];
+    cube[2][2]=cube_save[5][1];
 }
 int turn_Tz_Plus(){
     for(int i=0;i<6;i++){
@@ -125,8 +129,7 @@ int turn_Tz_minus(){
     cube[4][2]=cube_save[1][2];
 }
 void main(){
-    turn_Ty_minus();
-    //turn_Tx_Plus();
+    turn_Tx_minus();
     for (int i = 0; i < 6; i++)
     {
         for (int j = 0; j < 4; j++)
