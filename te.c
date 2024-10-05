@@ -400,7 +400,7 @@ void main(){
         printf("\n");
     }
     printf("\n");
-    pitchA2();
+    pitchB2();
     for (int i = 0; i < 6; i++)
     {
         for (int j = 1; j < 5; j++)
