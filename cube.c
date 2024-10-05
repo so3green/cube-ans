@@ -137,12 +137,7 @@ int turn_Tz_minus(){
     cube[1][1]=cube_save[2][1];
 }
 void main(){
-    turn_Tx_Plus();
-    turn_Ty_minus();
     turn_Tx_minus();
-    turn_Tz_minus();
-    turn_Tx_Plus();
-    turn_Ty_Plus();
     for (int i = 0; i < 6; i++)
     {
         for (int j = 0; j < 4; j++)
