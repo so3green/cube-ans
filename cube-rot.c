@@ -120,13 +120,13 @@ void pitchA2(void);
 void pitchB2(void);
 void yawA2(void);
 void yawB2(void);
-  char tp1[LED_COUNT] = {1, 1, 1, 1};
-  char tp2[LED_COUNT] = {2, 2, 2, 2};
-  char tp3[LED_COUNT] = {3, 3, 3, 3};
-  char tp4[LED_COUNT] = {4, 4, 4, 4};
-  char tp5[LED_COUNT] = {5, 5, 5, 5};
-  char tp6[LED_COUNT] = {6, 6, 6, 6};
-  char sideA[LED_COUNT] ; char sideB[LED_COUNT] ; char sideC[LED_COUNT] ;
+char tp1[LED_COUNT] = {1, 1, 1, 1};
+char tp2[LED_COUNT] = {2, 2, 2, 2};
+char tp3[LED_COUNT] = {3, 3, 3, 3};
+char tp4[LED_COUNT] = {4, 4, 4, 4};
+char tp5[LED_COUNT] = {5, 5, 5, 5};
+char tp6[LED_COUNT] = {6, 6, 6, 6};
+char sideA[LED_COUNT] ; char sideB[LED_COUNT] ; char sideC[LED_COUNT] ;
 char sideD[LED_COUNT] ; char sideE[LED_COUNT] ; char sideF[LED_COUNT] ;
 
 char sideA2[LED_COUNT] ; char sideB2[LED_COUNT] ; char sideC2[LED_COUNT] ;
@@ -144,14 +144,14 @@ char tempA4[LED_COUNT], tempA5[LED_COUNT] , tempA6[LED_COUNT] ;
 char tempB1[LED_COUNT] , tempB2[LED_COUNT] , tempB3[LED_COUNT] ;
 char tempB4[LED_COUNT] , tempB5[LED_COUNT] , tempB6[LED_COUNT] ;
 
-  unsigned char i;
+unsigned char i;
 
-  for (i = 0; i < LED_COUNT; i++) {
-    tempA1[i] = sideA[i]; tempA2[i] = sideB[i]; tempA3[i] = sideC[i];
-    tempA4[i] = sideD[i]; tempA5[i] = sideE[i]; tempA6[i] = sideF[i];
-    tempB1[i] = sideA[i]; tempB2[i] = sideB[i]; tempB3[i] = sideC[i];
-    tempB4[i] = sideD[i]; tempB5[i] = sideE[i]; tempB6[i] = sideF[i];
-  }
+    for (i = 0; i < LED_COUNT; i++) {
+        tempA1[i] = sideA[i]; tempA2[i] = sideB[i]; tempA3[i] = sideC[i];
+        tempA4[i] = sideD[i]; tempA5[i] = sideE[i]; tempA6[i] = sideF[i];
+        tempB1[i] = sideA[i]; tempB2[i] = sideB[i]; tempB3[i] = sideC[i];
+        tempB4[i] = sideD[i]; tempB5[i] = sideE[i]; tempB6[i] = sideF[i];
+    }
 
   tempA1[LEDPos1[1]] = tempB2[LEDPos2[1]];  tempA1[LEDPos1[2]] = tempB2[LEDPos2[2]];
   tempA2[LEDPos2[1]] = tempB3[LEDPos3[1]];  tempA2[LEDPos2[2]] = tempB3[LEDPos3[2]];
@@ -233,9 +233,8 @@ void pitchB2(void) {
 }
 
 void yawA2(void) {
-  char tempA1[LED_COUNT] , tempA2[LED_COUNT] , tempA3[LED_COUNT] ;
-  char tempA4[LED_COUNT] , tempA5[LED_COUNT] , tempA6[LED_COUNT] ;
-
+    char tempA1[LED_COUNT] , tempA2[LED_COUNT] , tempA3[LED_COUNT] ;
+    char tempA4[LED_COUNT] , tempA5[LED_COUNT] , tempA6[LED_COUNT] ;
   char tempB1[LED_COUNT] , tempB2[LED_COUNT] , tempB3[LED_COUNT] ;
   char tempB4[LED_COUNT] , tempB5[LED_COUNT] , tempB6[LED_COUNT] ;
 
@@ -483,5 +482,4 @@ void main(){
     //Rubikyaw2(1);
     Rubikyaw2(1);
     Show();
-
 }
