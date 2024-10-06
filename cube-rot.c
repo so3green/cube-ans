@@ -467,6 +467,38 @@ void Show(){
     ShowSide(sideE);
     ShowSide(sideF);
 }
+int checkside(char * side){
+    for(int i=0;i<LED_COUNT;i++){
+        if(side[0]!=side[i]){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int Check(){
+  if(checkside(sideA)==1){
+    if (checkside(sideB)==1){
+      if(checkside(sideC)==1){
+        if(checkside(sideD)==1){
+          if(checkside(sideE)==1){
+            if(checkside(sideF)==1){
+              return 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+void Set(){
+  arraysetA(tp1);
+  arraysetB(tp2);
+  arraysetC(tp3);
+  arraysetD(tp4);
+  arraysetE(tp5);
+  arraysetF(tp6);
+}
 
 void main(){
     arraysetA(tp1);
@@ -477,9 +509,14 @@ void main(){
     arraysetF(tp6);
     Show();
     printf("\n");
-    //Rubikroll2(1);
-    Rubikpitch2(2);
-    //Rubikyaw2(1);
+    printf("%d",Check());
+    printf("\n");
+    Rubikroll2(1);
+    Rubikpitch2(1);
     Rubikyaw2(1);
+    Rubikroll2(1);
+    Rubikpitch2(2);
     Show();
+    printf("\n");
+    printf("%d",Check());
 }
