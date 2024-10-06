@@ -516,6 +516,10 @@ void main(){
     Rubikyaw2(1);
     Rubikroll2(1);
     Rubikpitch2(2);
+    Rubikroll2(1);
+    Rubikpitch2(1);
+    Rubikpitch2(1);
+    Rubikyaw2(1);
     Show();
     printf("\n");
     printf("%d",Check());

@@ -511,7 +511,7 @@ void Set(){
   arraysetF(tp6);
 }
 
-void solve(int a,int b,int c,int d,int e,int f,int g){
+void solve(int a,int b,int c,int d,int e,int f,int g,int h,int i){
     Set();
     if(a==0){
     }
@@ -653,6 +653,46 @@ void solve(int a,int b,int c,int d,int e,int f,int g){
     else if(g==6){
         Rubikyaw2(2);
     }
+    if(h==0){
+    }
+    else if(h==1){
+        Rubikroll2(1);
+    }
+    else if(h==2){
+        Rubikroll2(2);
+    }
+    else if(h==3){
+        Rubikpitch2(1);
+    }
+    else if(h==4){
+        Rubikpitch2(2);
+    }
+    else if(h==5){
+        Rubikyaw2(1);
+    }
+    else if(h==6){
+        Rubikyaw2(2);
+    }
+    if(i==0){
+    }
+    else if(i==1){
+        Rubikroll2(1);
+    }
+    else if(i==2){
+        Rubikroll2(2);
+    }
+    else if(i==3){
+        Rubikpitch2(1);
+    }
+    else if(i==4){
+        Rubikpitch2(2);
+    }
+    else if(i==5){
+        Rubikyaw2(1);
+    }
+    else if(i==6){
+        Rubikyaw2(2);
+    }
 }
 
 
@@ -663,8 +703,8 @@ void main(){
         if(s==0){
         }
         else if (s==1){
-            if(depth<7){
-                depth=7;
+            if(depth<9){
+                depth=9;
             }
         }
         else if (s==2){
@@ -682,8 +722,8 @@ void main(){
         if(o==0){
         }
         else if (o==1){
-            if(depth<6){
-                depth=6;
+            if(depth<8){
+                depth=8;
             }
         }
         else if (o==2){
@@ -700,8 +740,8 @@ void main(){
             if(p==0){
             }
             else if (p==1){
-                if(depth<5){
-                    depth=5;
+                if(depth<7){
+                    depth=7;
                 }
             }
             else if (p==2){
@@ -718,8 +758,8 @@ void main(){
                 if(k==0){
                 }
                 else if (k==1){
-                    if(depth<4){
-                        depth=4;
+                    if(depth<6){
+                        depth=6;
                     }
                 }
                 else if (k==2){
@@ -734,9 +774,10 @@ void main(){
                 }
                 for(int l=0;l<7;l++){
                     if(l==0){
-                    }else if (l==1){
-                        if(depth<3){
-                            depth=3;
+                    }
+                    else if (l==1){
+                        if(depth<5){
+                            depth=5;
                         }
                     }
                     else if (l==2){
@@ -753,8 +794,8 @@ void main(){
                         if(m==0){
                         }
                         else if (m==1){
-                            if(depth<=2){
-                                depth=2;
+                            if(depth<=4){
+                                depth=4;
                             }
                         }
                         else if (m==2){
@@ -771,8 +812,8 @@ void main(){
                             if(n==0){
                             }
                             else if (n==1){
-                                if(depth<=1){
-                                depth=1;
+                                if(depth<=3){
+                                depth=3;
                             }
                             }
                             else if (n==2){
@@ -785,11 +826,49 @@ void main(){
                             }
                             else if (n==6){
                             }
-                            //ここに対応させた関数を置く
-                            solve(s,o,p,k,l,m,n);
-                            if (Check()==1){
-                                printf("depth = %d\n%d,%d,%d,%d,%d,%d,%d",depth,s,o,p,k,l,m,n);
-                                return;
+                            for(int z=0;z<7;z++){
+                                if(n==0){
+                                }
+                                else if (z==1){
+                                    if(depth<=2){
+                                        depth=2;
+                                    }
+                                }
+                                else if (z==2){
+                                }
+                                else if (z==3){
+                                }
+                                else if (z==4){
+                                }
+                                else if (z==5){
+                                }
+                                else if (z==6){
+                                }
+                                for(int y=0;y<7;y++){
+                                    if(n==0){
+                                    }
+                                    else if (y==1){
+                                        if(depth<=1){
+                                            depth=1;
+                                        }
+                                    }
+                                    else if (y==2){
+                                    }
+                                    else if (y==3){
+                                    }
+                                    else if (y==4){
+                                    }
+                                    else if (y==5){
+                                    }
+                                    else if (y==6){
+                                    }
+                                    //ここに対応させた関数を置く
+                                    solve(s,o,p,k,l,m,n,z,y);
+                                    if (Check()==1){
+                                        printf("depth = %d\n%d,%d,%d,%d,%d,%d,%d,%d,%d",depth,s,o,p,k,l,m,n,z,y);
+                                        return;
+                                    }
+                                }
                             }
                         }
                     }
