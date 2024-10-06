@@ -129,12 +129,12 @@ char tp5[LED_COUNT] = {5, 5, 5, 5};
 char tp6[LED_COUNT] = {6, 6, 6, 6};
 */
 
-char tp1[LED_COUNT] = {3,4,3,1};
-char tp2[LED_COUNT] = {2,6,6,6};
-char tp3[LED_COUNT] = {1,5,5,1};
-char tp4[LED_COUNT] = {5,2,5,4};
-char tp5[LED_COUNT] = {4,2,4,1};
-char tp6[LED_COUNT] = {3,6,2,3};
+char tp1[LED_COUNT] = {5,2,5,3};
+char tp2[LED_COUNT] = {3,1,6,3};
+char tp3[LED_COUNT] = {1,6,2,1};
+char tp4[LED_COUNT] = {3,5,4,1};
+char tp5[LED_COUNT] = {4,6,4,6};
+char tp6[LED_COUNT] = {2,2,4,5};
 
 char sideA[LED_COUNT] ; char sideB[LED_COUNT] ; char sideC[LED_COUNT] ;
 char sideD[LED_COUNT] ; char sideE[LED_COUNT] ; char sideF[LED_COUNT] ;
