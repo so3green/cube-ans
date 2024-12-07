@@ -1,4 +1,10 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAX_LINE_LENGTH 256
+#define NUMBERS_PER_BATCH 24
+#define NUMBERS_PER_LINE 24
+
 #define RUBIK_CUBE_MODE_ON
 
 #define Dimension2_2
@@ -695,12 +701,8 @@ void solve(int a,int b,int c,int d,int e,int f,int g,int h,int i){
     }
 }
 
-
-
-void main(){
+void report(){
     int depth = 0;
-    //scanf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,",tp1[0],tp1[1],tp1[2],tp1[3],tp2[0],tp2[1],tp2[2],tp2[3],tp3[0],tp3[1],tp3[2],tp3[3],tp4[0],tp4[1],tp4[2],tp4[3],tp5[0],tp5[1],tp5[2],tp5[3],tp6[0],tp6[1],tp6[2],tp6[3]);
-    //printf("\n%d",tp1[0]);
     for(int s=0;s<7;s++){
         if(s==0){
         }
@@ -881,4 +883,80 @@ void main(){
     } 
     
     printf("nothing");
+}
+
+void extract_numbers(FILE *file) {
+    char line[MAX_LINE_LENGTH];
+    int numbers[NUMBERS_PER_BATCH];  // 24個の数字を格納する配列
+    int count = 0;  // 配列に格納された数字の個数
+    int num1, num2, num3, num4;
+
+    while (fgets(line, sizeof(line), file)) {
+        // 数字が含まれている行を処理（数字とカンマのみが含まれている場合）
+        if (sscanf(line, "%d,%d,%d,%d,", &num1, &num2, &num3, &num4) == 4) {
+            // 配列に数字を格納
+            numbers[count] = num1;
+            numbers[count + 1] = num2;
+            numbers[count + 2] = num3;
+            numbers[count + 3] = num4;
+            count += 4;  // 4つの数字を追加
+
+            // 配列が24個に達した場合、表示
+            if (count == NUMBERS_PER_BATCH) {
+                for (int i = 0; i < NUMBERS_PER_BATCH; i++) {
+                    printf("%d ", numbers[i]);
+                }
+                printf("\n");
+                /*
+                tp1[0]=numbers[0];
+                tp1[1]=numbers[1];
+                tp1[2]=numbers[2];
+                tp1[3]=numbers[3];
+                tp2[0]=numbers[4];
+                tp2[1]=numbers[5];
+                tp2[2]=numbers[6];
+                tp2[3]=numbers[7];
+                tp3[0]=numbers[8];
+                tp3[1]=numbers[9];
+                tp3[2]=numbers[10];
+                tp3[3]=numbers[11];
+                tp4[0]=numbers[12];
+                tp4[1]=numbers[13];
+                tp4[2]=numbers[14];
+                tp4[3]=numbers[15];
+                tp5[0]=numbers[16];
+                tp5[1]=numbers[17];
+                tp5[2]=numbers[18];
+                tp5[3]=numbers[19];
+                tp6[0]=numbers[20];
+                tp6[1]=numbers[21];
+                tp6[2]=numbers[22];
+                tp6[3]=numbers[23];
+                report();*/
+                count = 0;  // カウントをリセット
+            }
+        }
+    }
+
+    // 残りの数字があれば表示（24個未満）
+    if (count > 0) {
+        for (int i = 0; i < count; i++) {
+            printf("%d ", numbers[i]);
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+int main(){
+    FILE *file = fopen("test1.txt", "r");   // ここにファイルのパスを設定
+    if (file == NULL) {
+        printf("ファイルを開けませんでした。\n");
+        return 1;
+    }
+    extract_numbers(file);  // 数字の抽出と表示
+
+    fclose(file);
 }
