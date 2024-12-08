@@ -508,7 +508,7 @@ void Set(){
   arraysetF(tp6);
 }
 
-void solve(int a,int b,int c,int d,int e,int f,int g,int h,int i){
+void solve(int a,int b,int c,int d,int e,int f,int g,int h,int i,int j,int k,int l){
     Set();
     if(a==0){
     }
@@ -690,6 +690,66 @@ void solve(int a,int b,int c,int d,int e,int f,int g,int h,int i){
     else if(i==6){
         Rubikyaw2(2);
     }
+    if(j==0){
+    }
+    else if(j==1){
+        Rubikroll2(1);
+    }
+    else if(j==2){
+        Rubikroll2(2);
+    }
+    else if(j==3){
+        Rubikpitch2(1);
+    }
+    else if(j==4){
+        Rubikpitch2(2);
+    }
+    else if(j==5){
+        Rubikyaw2(1);
+    }
+    else if(j==6){
+        Rubikyaw2(2);
+    }
+    if(k==0){
+    }
+    else if(k==1){
+        Rubikroll2(1);
+    }
+    else if(k==2){
+        Rubikroll2(2);
+    }
+    else if(k==3){
+        Rubikpitch2(1);
+    }
+    else if(k==4){
+        Rubikpitch2(2);
+    }
+    else if(k==5){
+        Rubikyaw2(1);
+    }
+    else if(k==6){
+        Rubikyaw2(2);
+    }
+    if(l==0){
+    }
+    else if(l==1){
+        Rubikroll2(1);
+    }
+    else if(l==2){
+        Rubikroll2(2);
+    }
+    else if(l==3){
+        Rubikpitch2(1);
+    }
+    else if(l==4){
+        Rubikpitch2(2);
+    }
+    else if(l==5){
+        Rubikyaw2(1);
+    }
+    else if(l==6){
+        Rubikyaw2(2);
+    }
 }
 
 
@@ -702,8 +762,8 @@ void report(){
         if(s==0){
         }
         else if (s==1){
-            if(depth<9){
-                depth=9;
+            if(depth<12){
+                depth=12;
             }
         }
         else if (s==2){
@@ -721,8 +781,8 @@ void report(){
         if(o==0){
         }
         else if (o==1){
-            if(depth<8){
-                depth=8;
+            if(depth<11){
+                depth=11;
             }
         }
         else if (o==2){
@@ -739,8 +799,8 @@ void report(){
             if(p==0){
             }
             else if (p==1){
-                if(depth<7){
-                    depth=7;
+                if(depth<10){
+                    depth=10;
                 }
             }
             else if (p==2){
@@ -757,8 +817,8 @@ void report(){
                 if(k==0){
                 }
                 else if (k==1){
-                    if(depth<6){
-                        depth=6;
+                    if(depth<9){
+                        depth=9;
                     }
                 }
                 else if (k==2){
@@ -775,8 +835,8 @@ void report(){
                     if(l==0){
                     }
                     else if (l==1){
-                        if(depth<5){
-                            depth=5;
+                        if(depth<8){
+                            depth=8;
                         }
                     }
                     else if (l==2){
@@ -793,8 +853,8 @@ void report(){
                         if(m==0){
                         }
                         else if (m==1){
-                            if(depth<=4){
-                                depth=4;
+                            if(depth<=7){
+                                depth=7;
                             }
                         }
                         else if (m==2){
@@ -811,8 +871,8 @@ void report(){
                             if(n==0){
                             }
                             else if (n==1){
-                                if(depth<=3){
-                                depth=3;
+                                if(depth<=6){
+                                depth=6;
                             }
                             }
                             else if (n==2){
@@ -829,8 +889,8 @@ void report(){
                                 if(n==0){
                                 }
                                 else if (z==1){
-                                    if(depth<=2){
-                                        depth=2;
+                                    if(depth<=5){
+                                        depth=5;
                                     }
                                 }
                                 else if (z==2){
@@ -844,11 +904,11 @@ void report(){
                                 else if (z==6){
                                 }
                                 for(int y=0;y<7;y++){
-                                    if(n==0){
+                                    if(y==0){
                                     }
                                     else if (y==1){
-                                        if(depth<=1){
-                                            depth=1;
+                                        if(depth<=4){
+                                            depth=4;
                                         }
                                     }
                                     else if (y==2){
@@ -861,12 +921,69 @@ void report(){
                                     }
                                     else if (y==6){
                                     }
+                                    for(int a=0;a<7;a++){
+                                    if(a==0){
+                                    }
+                                    else if (a==1){
+                                        if(depth<=3){
+                                            depth=3;
+                                        }
+                                    }
+                                    else if (a==2){
+                                    }
+                                    else if (a==3){
+                                    }
+                                    else if (a==4){
+                                    }
+                                    else if (a==5){
+                                    }
+                                    else if (a==6){
+                                    }
+                                    for(int b=0;b<7;b++){
+                                    if(b==0){
+                                    }
+                                    else if (b==1){
+                                        if(depth<=2){
+                                            depth=2;
+                                        }
+                                    }
+                                    else if (b==2){
+                                    }
+                                    else if (b==3){
+                                    }
+                                    else if (b==4){
+                                    }
+                                    else if (b==5){
+                                    }
+                                    else if (b==6){
+                                    }
+                                    for(int c=0;c<7;c++){
+                                    if(c==0){
+                                    }
+                                    else if (c==1){
+                                        if(depth<=1){
+                                            depth=1;
+                                        }
+                                    }
+                                    else if (c==2){
+                                    }
+                                    else if (c==3){
+                                    }
+                                    else if (c==4){
+                                    }
+                                    else if (c==5){
+                                    }
+                                    else if (c==6){
+                                    }
                                     //ここに対応させた関数を置く
-                                    solve(s,o,p,k,l,m,n,z,y);
+                                    solve(s,o,p,k,l,m,n,z,y,a,b,c);
                                     if (Check()==1){
-                                        printf("depth = %d : %d,%d,%d,%d,%d,%d,%d,%d,%d\n",depth,s,o,p,k,l,m,n,z,y);
+                                        printf("depth = %d : %d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n",depth,s,o,p,k,l,m,n,z,y,a,b,c);
                                         return;
                                     }
+                                }
+                                }
+                                }
                                 }
                             }
                         }
@@ -877,7 +994,7 @@ void report(){
     }
     } 
     
-    printf("nothing");
+    printf("nothing\n");
 }
 
 // 数字の抽出と配列への収納
@@ -942,7 +1059,7 @@ void extract_numbers(FILE *file) {
 
 
 int main() {
-    FILE *file = fopen("test1_data.txt", "r");  // ファイルを開く
+    FILE *file = fopen("test3.txt", "r");  // ファイルを開く
 
     if (file == NULL) {
         printf("ファイルを開けませんでした。\n");
