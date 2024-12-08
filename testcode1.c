@@ -47,7 +47,7 @@ void extract_numbers(FILE *file) {
 }
 
 int main() {
-    FILE *file = fopen("test1_data.txt", "r");  // ファイルを開く
+    FILE *file = fopen("test1.txt", "r");  // ファイルを開く
 
     if (file == NULL) {
         printf("ファイルを開けませんでした。\n");
