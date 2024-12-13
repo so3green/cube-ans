@@ -886,7 +886,7 @@ void report(){
                             else if (n==6){
                             }
                             for(int z=0;z<7;z++){
-                                if(n==0){
+                                if(z==0){
                                 }
                                 else if (z==1){
                                     if(depth<=5){
@@ -1059,7 +1059,7 @@ void extract_numbers(FILE *file) {
 
 
 int main() {
-    FILE *file = fopen("test3.txt", "r");  // ファイルを開く
+    FILE *file = fopen("test6.txt", "r");  // ファイルを開く
 
     if (file == NULL) {
         printf("ファイルを開けませんでした。\n");
