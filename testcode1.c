@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define MAX_LINE_LENGTH 256
 #define NUMBERS_PER_BATCH 24  // 配列に格納する数字の数
@@ -114,6 +115,11 @@
 #define RotNum_min 15
 #define RotNum_max 30
 #define LED_COUNT 4
+
+long cpu_time;
+double sec;
+
+
 void arraysetA(char *);
 void arraysetB(char *);
 void arraysetC(char *);
@@ -1059,7 +1065,7 @@ void extract_numbers(FILE *file) {
 
 
 int main() {
-    FILE *file = fopen("test6.txt", "r");  // ファイルを開く
+    FILE *file = fopen("test11.txt", "r");  // ファイルを開く
 
     if (file == NULL) {
         printf("ファイルを開けませんでした。\n");
@@ -1071,5 +1077,8 @@ int main() {
     extract_numbers(file);  // 数字の抽出と表示
 
     fclose(file);  // ファイルを閉じる
+    cpu_time = clock();
+    sec = (double)cpu_time/CLOCKS_PER_SEC;
+    printf("\n実行時間:%fs",sec);
     return 0;
 }
