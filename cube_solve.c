@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 #define RUBIK_CUBE_MODE_ON
 
 #define Dimension2_2
@@ -108,6 +111,10 @@
 #define RotNum_min 15
 #define RotNum_max 30
 #define LED_COUNT 4
+
+long cpu_time;
+double sec;
+
 void arraysetA(char *);
 void arraysetB(char *);
 void arraysetC(char *);
@@ -868,6 +875,9 @@ void main(){
                                     solve(s,o,p,k,l,m,n,z,y);
                                     if (Check()==1){
                                         printf("depth = %d\n%d,%d,%d,%d,%d,%d,%d,%d,%d",depth,s,o,p,k,l,m,n,z,y);
+                                        cpu_time = clock();
+                                        sec = (double)cpu_time/CLOCKS_PER_SEC;
+                                        printf("\n実行時間:%fs",sec);
                                         return;
                                     }
                                 }
@@ -878,7 +888,9 @@ void main(){
             }
         }
     }
-    } 
-    
+    }
     printf("nothing");
+    cpu_time = clock();
+    sec = (double)cpu_time/CLOCKS_PER_SEC;
+    printf("\n実行時間:%fs",sec);
 }
